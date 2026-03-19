@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jiagritte</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, sans-serif;
+            background: #fafafa;
+            color: #222;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem 2rem;
+        }
+        h1 { font-size: 2.2rem; font-weight: 350; border-bottom: 1px solid #eee; padding-bottom: 0.75rem; }
+        h2 { font-size: 1.6rem; margin: 2.5rem 0 1.2rem; font-weight: 350; }
+        h3 { font-size: 1.3rem; margin: 1.5rem 0 0.5rem; font-weight: 360; }
+        .lang-switcher {
+            display: flex; gap: 1rem; justify-content: flex-end; margin-bottom: 1.5rem;
+        }
+        .lang-btn {
+            background: none; border: 1px solid #ccc; padding: 0.3rem 1rem;
+            font-size: 0.9rem; cursor: pointer; border-radius: 20px;
+        }
+        .lang-btn.active { background: #222; border-color: #222; color: white; }
+        .lang-en { display: none; }
+        body.en .lang-zh { display: none; }
+        body.en .lang-en { display: block; }
+        .bio-dual p { margin-bottom: 1rem; }
+        .bio-dual p:last-child {
+            color: #555; font-size: 0.98rem;
+            border-left: 2px solid #ddd; padding-left: 1.2rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .image-item img {
+            width: 100%; height: auto; display: block; background: #eaeaea;
+        }
+        .image-caption { margin-top: 0.6rem; font-size: 0.9rem; color: #444; }
+        .exhibition-block { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #f0f0f0; }
+        .address {
+            white-space: pre-line; font-style: italic; color: #777;
+            margin: 0.5rem 0 1rem; padding-left: 0.5rem; border-left: 2px solid #eee;
+        }
+        .statement {
+            margin: 1.5rem 0; padding: 1rem 1.2rem; background: #f9f9f9; border-radius: 4px;
+        }
+        footer {
+            margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid #eee;
+            font-size: 0.85rem; color: #777; text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 标题和语言切换 -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h1>jiagritte</h1>
+            <div class="lang-switcher">
+                <button class="lang-btn active" id="btn-zh">中文</button>
+                <button class="lang-btn" id="btn-en">EN</button>
+            </div>
+        </div>
+
+        <!-- 简介 -->
+        <section class="bio-dual" style="margin: 2rem 0 2.5rem;">
+            <h2>简介</h2>
+            <p>画苹果的艺术家，工作生活于中国北京。</p>
+            <p>Apple painter, lives and works in Beijing, China.<br>Email: jiagritte@163.com</p>
+        </section>
+
+        <!-- 展览 -->
+        <section>
+            <h2>展览</h2>
+
+            <!-- 第一次展览 2024 -->
+            <div class="exhibition-block">
+                <h3>Newton, Jobs and… - the apple of human emotions</h3>
+                <div style="font-size:1rem; color:#444;">jiagritte 首次个展 / jiagritte first solo exhibition</div>
+                <div class="exhibition-meta">2024.6.1 - 2024.7.1 北京 / June 1 - July 1, 2024 Beijing</div>
+                <div class="address">
+                    八步咖啡 baft<br>北京市东城区安德路33号<br>路口向北10米西营房胡同9号院2号楼8号<br>
+                    Baft Coffee<br>No.33 Ande Road, Dongcheng District, Beijing<br>Building 2-8, No.9 Xifang Hutong, 10m north of intersection
+                </div>
+                <div class="statement">
+                    <div class="lang-zh">
+                        <p>我的心理咨询师告诉我，用更精细的词语描述情绪，能帮我们更好地觉察与释放。</p>
+                        <p>如果把内心世界比作一幅画，它拥有上百个层次。只说“难受”的人，也许只触达两三层；能精准命名情绪的人，却能看见十几种层次。这会影响我们如何认知、调节情绪与做出选择。</p>
+                        <p>研究表明，情绪粒度更高的人，抗压能力更强。情感体验越细腻，我们越懂自己。</p>
+                        <p>语言不只是描述经历，它更在构建经历。拥有丰富情绪词汇的人，能更清晰地感知、分类与回应内心。</p>
+                        <p>——摘自 简单心理《154个难以被描述的情绪》</p>
+                        <p>这些苹果，帮我呈现那些模糊、细碎、不知如何安放的日常情绪。我理性的大脑时常介入，彼此拉扯，形成一种奇妙的平衡。</p>
+                        <p>不必害怕脆弱与敏感。拥有它们，本身就是一种勇敢。</p>
+                        <p>把勇气到来后，那些飘在脑海里的念头，一一变成现实。这场游戏，很有趣。</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>My therapist taught me that describing emotions with fine granularity helps us recognize and release them.</p>
+                        <p>If we compare our emotional world to a painting, it holds hundreds of layers. One who only says “I feel bad” may sense just a few layers, while one who names precise feelings can perceive many more. This difference shapes our self-awareness, emotional regulation, and decision-making.</p>
+                        <p>Studies show that people with higher emotional granularity have stronger stress resilience. The more nuanced our emotional experience, the better we understand our inner life.</p>
+                        <p>Language does not only describe experience — it constructs it. Those with a rich emotional vocabulary can perceive, categorize, and respond to feelings more clearly.</p>
+                        <p>— From Simple Psychology, 154 Indescribable Emotions</p>
+                        <p>The Apples help me express those vague, subtle, everyday emotions I once could not name or place. My rational mind often intervenes, and together they form a strange balance.</p>
+                        <p>Do not fear vulnerability or sensitivity. To have them is to be brave.</p>
+                        <p>Turn the faint thoughts that come with courage into reality, one by one. This game is wonderful.</p>
+                    </div>
+                </div>
+                <!-- 第一次展览图片网格 -->
+                <div class="grid">
+                    <div class="image-item">
+                        <img src="first.JPG" alt="海报">
+                        <div class="image-caption lang-zh">展览海报 · 2024</div>
+                        <div class="image-caption lang-en">Exhibition Poster · 2024</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="redapple17.JPG" alt="现场">
+                        <div class="image-caption lang-zh">展览现场 · 八步咖啡</div>
+                        <div class="image-caption lang-en">Installation view · Baft Coffee</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="redapple7.jpg" alt="GoodLuck">
+                        <div class="image-caption lang-zh">《GoodLuck》布面丙烯 90x120cm</div>
+                        <div class="image-caption lang-en">"GoodLuck" acrylic on canvas 90x120cm</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="redappleguide.JPG" alt="导览">
+                        <div class="image-caption lang-zh">展览导览</div>
+                        <div class="image-caption lang-en">Exhibition Guide</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二次展览 2025 -->
+            <div class="exhibition-block">
+                <h3>Newton, Jobs and… - the apple of human emotions</h3>
+                <div style="font-size:1rem; color:#444;">jiagritte 第二次个展 / jiagritte second solo exhibition</div>
+                <div class="exhibition-meta">2025.6.27 - 2025.8.27 北京 / June 27 - August 27, 2025 Beijing</div>
+                <div class="address">
+                    NICECREAM（冰淇淋店）<br>北京市朝阳区建国门外大街17号北京友谊商店园区24幢平房01<br>
+                    NICECREAM<br>Bldg 24-01, Friendship Store Compound, No.17 Jianguomenwai Ave, Chaoyang District, Beijing
+                </div>
+                <div class="statement">
+                    <div class="lang-zh">
+                        <p>苹果们似乎在帮助我描绘一种广泛的、细碎的、不知如何处理和安放的日常情绪。我理智的大脑常跳出来干预那些情绪，所以互相作用形成一种奇怪的平衡感。</p>
+                        <p>不要害怕脆弱和敏感，拥有这些等于拥有了勇敢。</p>
+                        <p>将拥有勇气后出现在大脑中的飘渺念头们，一一变成现实，这场游戏很好玩。</p>
+                        <p>Blue apple<br>专属这个夏天的蓝色情绪，<br>也许不止是忧郁和沮丧的，<br>可能是天空是大海是小溪是雨天楼下的小水沟，<br>也有可能是甜的</p>
+                    </div>
+                    <div class="lang-en">
+                        <p>The apples seem to help me depict a wide range of fragmented daily emotions that I don't know how to handle or place. My rational mind often jumps in to intervene with those emotions, so they interact and form a strange sense of balance.</p>
+                        <p>Don't be afraid of vulnerability and sensitivity; having them means having courage.</p>
+                        <p>Turning the ethereal thoughts that appear in the mind after gaining courage into reality, one by one — this game is fun.</p>
+                        <p>Blue apple<br>The blue emotion of this summer,<br>perhaps not only melancholy and frustration,<br>it could be the sky, the sea, a stream, a small ditch downstairs on a rainy day,<br>or maybe it's sweet.</p>
+                    </div>
+                </div>
+                <!-- 第二次展览图片网格 -->
+                <div class="grid">
+                    <div class="image-item">
+                        <img src="second.JPG" alt="海报2025">
+                        <div class="image-caption lang-zh">展览海报 · 2025</div>
+                        <div class="image-caption lang-en">Exhibition Poster · 2025</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="xianchang.JPEG" alt="现场2025">
+                        <div class="image-caption lang-zh">展览现场 · NICECREAM</div>
+                        <div class="image-caption lang-en">Installation view · NICECREAM</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="xueqiu.JPG" alt="雪球">
+                        <div class="image-caption lang-zh">《雪球》布面油画 90x120cm</div>
+                        <div class="image-caption lang-en">"Snowball" oil on canvas 90x120cm</div>
+                    </div>
+                    <div class="image-item">
+                        <img src="xianding.JPG" alt="限定">
+                        <div class="image-caption lang-zh">展览限定</div>
+                        <div class="image-caption lang-en">Exhibition Exclusive</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新作品 2026 -->
+        <section style="margin-top: 2.5rem;">
+            <h2>新作品 · 2026 / New Works · 2026</h2>
+            <div class="grid">
+                <div class="image-item">
+                    <img src="new.jpg" alt="Inspiration">
+                    <div class="image-caption lang-zh">《Inspiration》布面丙烯 90x120cm</div>
+                    <div class="image-caption lang-en">"Inspiration" acrylic on canvas 90x120cm</div>
+                </div>
+                <div class="image-item">
+                    <img src="new2.jpg" alt="8:30">
+                    <div class="image-caption lang-zh">《8:30》布面丙烯 90x120cm</div>
+                    <div class="image-caption lang-en">"8:30" acrylic on canvas 90x120cm</div>
+                </div>
+                <div class="image-item">
+                    <img src="new3.jpg" alt="游泳">
+                    <div class="image-caption lang-zh">《游泳》布面丙烯 90x120cm</div>
+                    <div class="image-caption lang-en">"Swimming" acrylic on canvas 90x120cm</div>
+                </div>
+                <div class="image-item">
+                    <img src="new4.jpg" alt="FEAR">
+                    <div class="image-caption lang-zh">《FEAR》布面丙烯 90x120cm</div>
+                    <div class="image-caption lang-en">"FEAR" acrylic on canvas 90x120cm</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 jiagritte · Email: jiagritte@163.com</p>
+            <p style="font-size:0.75rem; color:#aaa;">所有图片版权归艺术家所有</p>
+        </footer>
+    </div>
+
+    <script>
+        (function() {
+            const body = document.body;
+            const btnZh = document.getElementById('btn-zh');
+            const btnEn = document.getElementById('btn-en');
+            function setLanguage(lang) {
+                if (lang === 'en') {
+                    body.classList.add('en');
+                    btnZh.classList.remove('active');
+                    btnEn.classList.add('active');
+                } else {
+                    body.classList.remove('en');
+                    btnZh.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+            btnZh.addEventListener('click', () => setLanguage('zh'));
+            btnEn.addEventListener('click', () => setLanguage('en'));
+            setLanguage('zh');
+        })();
+    </script>
+</body>
+</html>
